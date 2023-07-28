@@ -16,10 +16,10 @@ COORD CursorPosition;
 int enemyY[3];
 int enemyX[3];
 int enemyFlag[3];
-char car[4][4] = { ' ',' ',' ',' ', 
-					' ',' ',' ',' ', 
-					' ',' ',' ',' ',
-					' ',' ',' ',' ' }; 
+char car[4][4] = { ' ','?','?',' ', 
+					'?','?','?','?', 
+					' ','?','?',' ',
+					'?','?','?','?' }; 
 					
 int carPos = WIN_WIDTH/2;
 int score = 0; 
@@ -41,12 +41,12 @@ void setcursor(bool visible, DWORD size) {
 void drawBorder(){  
 	for(int i=0; i<SCREEN_HEIGHT; i++){
 		for(int j=0; j<17; j++){
-			gotoxy(0+j,i); cout<<" ";
-			gotoxy(WIN_WIDTH-j,i); cout<<" ";
+			gotoxy(0+j,i); cout<<"?";
+			gotoxy(WIN_WIDTH-j,i); cout<<"?";
 		}
 	} 
 	for(int i=0; i<SCREEN_HEIGHT; i++){
-		gotoxy(SCREEN_WIDTH,i); cout<<" ";
+		gotoxy(SCREEN_WIDTH,i); cout<<"?";
 	} 
 }
 void genEnemy(int ind){
